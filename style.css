@@ -1,0 +1,105 @@
+/*
+Theme Name: SATORI Dojo
+Theme URI: https://github.com/satoridev-web/satori-dojo-theme-codex-dev
+Author: SATORI
+Author URI: https://satori.club/
+Description: Lightweight classic/hybrid WordPress theme for clubs and dojos.
+Version: 0.1.0
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: satori-dojo
+Tags: blog, one-column, two-columns, custom-logo, custom-menu, custom-background, custom-colors, custom-header, theme-options, block-styles, translation-ready
+*/
+
+/*
+ * ------------------------------------------------------------
+ * SATORI Dojo Theme Base Styles
+ * ------------------------------------------------------------
+ */
+
+body {
+    margin: 0;
+    font-family: var(--satori-dojo-font-body, 'Helvetica Neue', Arial, sans-serif);
+    color: var(--satori-dojo-color-text, #1f2933);
+    background: var(--satori-dojo-color-background, #ffffff);
+    line-height: 1.6;
+}
+
+a {
+    color: var(--satori-dojo-color-primary, #0f766e);
+    text-decoration: none;
+}
+
+a:hover,
+a:focus {
+    color: var(--satori-dojo-color-primary-strong, #0c615b);
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.site-header,
+.site-footer {
+    background: var(--satori-dojo-color-surface, #f7fafc);
+}
+
+.container {
+    width: 90%;
+    max-width: var(--satori-dojo-container-width, 1100px);
+    margin: 0 auto;
+}
+
+.site-main {
+    padding: 2rem 0;
+}
+
+.button,
+.wp-block-button__link,
+input[type="submit"],
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem 1.25rem;
+    border-radius: 999px;
+    border: none;
+    background: var(--satori-dojo-color-primary, #0f766e);
+    color: #ffffff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.button:hover,
+.wp-block-button__link:hover,
+input[type="submit"]:hover,
+button:hover {
+    background: var(--satori-dojo-color-primary-strong, #0c615b);
+    transform: translateY(-1px);
+}
+
+.button:focus,
+.wp-block-button__link:focus,
+input[type="submit"]:focus,
+button:focus {
+    outline: 2px solid var(--satori-dojo-color-primary, #0f766e);
+    outline-offset: 2px;
+}
+
+.site-footer {
+    padding: 2rem 0;
+    color: var(--satori-dojo-color-text-muted, #475569);
+}
+
+.site-footer a {
+    color: inherit;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+    color: var(--satori-dojo-color-primary, #0f766e);
+}
