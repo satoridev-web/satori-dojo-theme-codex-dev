@@ -1,0 +1,11 @@
+{
+  "name": "satori/satori-dojo-theme",
+  "description": "SATORI Dojo WordPress theme tooling",
+  "type": "project",
+  "require-dev": {
+    "wp-coding-standards/wpcs": "^3.1"
+  },
+  "scripts": {
+    "lint": "phpcs"
+  }
+}

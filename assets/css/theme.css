@@ -1,0 +1,131 @@
+/*
+ * ------------------------------------------------------------
+ * SATORI Dojo Theme Styles
+ * ------------------------------------------------------------
+ */
+
+:root {
+    scroll-behavior: smooth;
+}
+
+.site-header {
+    padding: 1rem 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.site-branding {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.site-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--satori-dojo-color-text, #1f2933);
+}
+
+.site-description {
+    margin: 0;
+    color: var(--satori-dojo-color-text-muted, #475569);
+}
+
+.main-navigation {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.main-navigation ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    gap: 1rem;
+}
+
+.main-navigation a {
+    font-weight: 600;
+    color: var(--satori-dojo-color-text, #1f2933);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+}
+
+.entry-title {
+    margin: 0 0 0.5rem;
+    font-family: var(--satori-dojo-font-heading, 'Inter', sans-serif);
+}
+
+.entry-content,
+.entry-summary {
+    margin-top: 1rem;
+}
+
+.front-hero {
+    background: linear-gradient(135deg, var(--satori-dojo-color-primary, #0f766e), var(--satori-dojo-color-secondary, #0ea5e9));
+    color: #fff;
+    padding: 3rem 0;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+}
+
+.hero-content {
+    max-width: 640px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.footer-menu {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 0;
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-contact li {
+    margin-bottom: 0.5rem;
+}
+
+.satori-social-links {
+    list-style: none;
+    display: flex;
+    gap: 0.75rem;
+    padding: 0;
+    margin: 0.5rem 0;
+}
+
+.satori-social-links a {
+    display: inline-flex;
+    padding: 0.4rem 0.6rem;
+    background: var(--satori-dojo-color-primary, #0f766e);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 800px) {
+    .main-navigation {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+    }
+}
