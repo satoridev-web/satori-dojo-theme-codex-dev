@@ -8,6 +8,8 @@
 if ( ! function_exists( 'satori_dojo_register_patterns' ) ) {
     /**
      * Register custom block patterns.
+     *
+     * @return void
      */
     function satori_dojo_register_patterns() {
         if ( ! function_exists( 'register_block_pattern' ) ) {

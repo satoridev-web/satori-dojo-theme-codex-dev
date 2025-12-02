@@ -5,11 +5,23 @@
  * @package SATORI_Dojo
  */
 
-global $wp_query;
 get_header();
 ?>
     <header class="page-header">
-        <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'satori-dojo' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+        <h1 class="page-title">
+            <?php
+            printf(
+                wp_kses(
+                    /* translators: %s: Search query. */
+                    __( 'Search Results for: %s', 'satori-dojo' ),
+                    array(
+                        'span' => array(),
+                    )
+                ),
+                '<span>' . esc_html( get_search_query() ) . '</span>'
+            );
+            ?>
+        </h1>
     </header>
 
     <?php if ( have_posts() ) : ?>

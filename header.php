@@ -4,7 +4,8 @@
  *
  * @package SATORI_Dojo
  */
-?><!doctype html>
+?>
+<!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -12,8 +13,11 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
-<header class="site-header header-layout-<?php echo esc_attr( get_theme_mod( 'satori_dojo_header_layout', 'logo-left-nav-right' ) ); ?>">
+<?php
+wp_body_open();
+$header_layout = get_theme_mod( 'satori_dojo_header_layout', 'logo-left-nav-right' );
+?>
+<header class="site-header header-layout-<?php echo esc_attr( $header_layout ); ?>">
     <div class="container">
         <div class="site-branding">
             <?php
@@ -21,14 +25,20 @@
                 the_custom_logo();
             } else {
                 ?>
-                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title"><?php bloginfo( 'name' ); ?></a>
-                <p class="site-description"><?php bloginfo( 'description' ); ?></p>
+                <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="site-title">
+                    <?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+                </a>
+                <p class="site-description"><?php echo esc_html( get_bloginfo( 'description', 'display' ) ); ?></p>
                 <?php
             }
             ?>
         </div>
         <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">&#9776;</button>
-        <nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'satori-dojo' ); ?>">
+        <nav
+            id="site-navigation"
+            class="main-navigation"
+            aria-label="<?php esc_attr_e( 'Primary Menu', 'satori-dojo' ); ?>"
+        >
             <?php
             wp_nav_menu(
                 array(

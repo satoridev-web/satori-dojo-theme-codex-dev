@@ -5,13 +5,12 @@
  * @package SATORI_Dojo
  */
 
-global $wp_query;
 get_header();
 ?>
     <div class="front-hero">
         <div class="hero-content">
-            <h1><?php bloginfo( 'name' ); ?></h1>
-            <p><?php bloginfo( 'description' ); ?></p>
+            <h1><?php echo esc_html( get_bloginfo( 'name' ) ); ?></h1>
+            <p><?php echo esc_html( get_bloginfo( 'description', 'display' ) ); ?></p>
         </div>
     </div>
 

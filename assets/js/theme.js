@@ -6,9 +6,19 @@
         return;
     }
 
-    toggle.addEventListener('click', function () {
+    const closeMenuOnDesktop = () => {
+        if (window.matchMedia('(min-width: 801px)').matches) {
+            nav.classList.remove('is-open');
+            toggle.classList.remove('is-open');
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+    };
+
+    toggle.addEventListener('click', () => {
         const isOpen = nav.classList.toggle('is-open');
+        toggle.classList.toggle('is-open', isOpen);
         toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        nav.style.display = isOpen ? 'block' : 'none';
     });
+
+    window.addEventListener('resize', closeMenuOnDesktop);
 })();

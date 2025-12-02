@@ -1,3 +1,12 @@
+<?php
+/**
+ * Team grid block pattern.
+ *
+ * @package SATORI_Dojo
+ */
+
+// phpcs:disable Generic.Files.LineLength
+?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"40px","bottom":"40px"}}},"layout":{"type":"constrained"}} -->
 <div class="wp-block-group" style="padding-top:40px;padding-bottom:40px"><!-- wp:heading {"textAlign":"center"} -->
 <h2 class="wp-block-heading has-text-align-center">Meet the instructors</h2>
@@ -59,3 +68,6 @@
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
+<?php
+// phpcs:enable Generic.Files.LineLength
+?>
