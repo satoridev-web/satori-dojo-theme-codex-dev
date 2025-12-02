@@ -1,3 +1,12 @@
+<?php
+/**
+ * Training info block pattern.
+ *
+ * @package SATORI_Dojo
+ */
+
+// phpcs:disable Generic.Files.LineLength
+?>
 <!-- wp:group {"style":{"spacing":{"padding":{"top":"40px","bottom":"40px"}}},"backgroundColor":"surface","layout":{"type":"constrained"}} -->
 <div class="wp-block-group has-surface-background-color has-background" style="padding-top:40px;padding-bottom:40px"><!-- wp:columns {"align":"wide"} -->
 <div class="wp-block-columns alignwide"><!-- wp:column -->
@@ -35,3 +44,6 @@
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
+<?php
+// phpcs:enable Generic.Files.LineLength
+?>

@@ -8,6 +8,8 @@
 if ( ! function_exists( 'satori_dojo_scripts' ) ) {
     /**
      * Register scripts and styles.
+     *
+     * @return void
      */
     function satori_dojo_scripts() {
         $theme_version = wp_get_theme()->get( 'Version' );
@@ -40,6 +42,8 @@ add_action( 'wp_enqueue_scripts', 'satori_dojo_scripts' );
 if ( ! function_exists( 'satori_dojo_editor_assets' ) ) {
     /**
      * Editor assets.
+     *
+     * @return void
      */
     function satori_dojo_editor_assets() {
         $theme_version = wp_get_theme()->get( 'Version' );

@@ -5,7 +5,6 @@
  * @package SATORI_Dojo
  */
 
-global $wp_query;
 get_header();
 ?>
     <?php

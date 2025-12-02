@@ -8,6 +8,8 @@
 if ( ! function_exists( 'satori_dojo_setup' ) ) {
     /**
      * Set up theme supports.
+     *
+     * @return void
      */
     function satori_dojo_setup() {
         add_theme_support( 'automatic-feed-links' );
@@ -59,6 +61,8 @@ add_action( 'after_setup_theme', 'satori_dojo_setup' );
 if ( ! function_exists( 'satori_dojo_content_width' ) ) {
     /**
      * Set content width.
+     *
+     * @return void
      */
     function satori_dojo_content_width() {
         $GLOBALS['content_width'] = apply_filters( 'satori_dojo_content_width', 800 );
@@ -69,6 +73,8 @@ add_action( 'after_setup_theme', 'satori_dojo_content_width', 0 );
 if ( ! function_exists( 'satori_dojo_widgets_init' ) ) {
     /**
      * Register widget area.
+     *
+     * @return void
      */
     function satori_dojo_widgets_init() {
         register_sidebar(

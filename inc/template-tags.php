@@ -67,7 +67,12 @@ if ( ! function_exists( 'satori_dojo_adjust_brightness' ) ) {
         $g = max( 0, min( 255, $g + $steps ) );
         $b = max( 0, min( 255, $b + $steps ) );
 
-        return '#' . str_pad( dechex( $r ), 2, '0', STR_PAD_LEFT ) . str_pad( dechex( $g ), 2, '0', STR_PAD_LEFT ) . str_pad( dechex( $b ), 2, '0', STR_PAD_LEFT );
+        return (
+            '#' .
+            str_pad( dechex( $r ), 2, '0', STR_PAD_LEFT ) .
+            str_pad( dechex( $g ), 2, '0', STR_PAD_LEFT ) .
+            str_pad( dechex( $b ), 2, '0', STR_PAD_LEFT )
+        );
     }
 }
 
@@ -97,6 +102,7 @@ if ( ! function_exists( 'satori_dojo_display_social_icons' ) ) {
      * Render social icons list.
      *
      * @param string $location Location slug for toggle.
+     * @return void
      */
     function satori_dojo_display_social_icons( $location = 'footer' ) {
         $show_icons = get_theme_mod( "satori_dojo_show_social_{$location}" );

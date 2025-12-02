@@ -1,3 +1,12 @@
+<?php
+/**
+ * CTA strip block pattern.
+ *
+ * @package SATORI_Dojo
+ */
+
+// phpcs:disable Generic.Files.LineLength
+?>
 <!-- wp:group {"align":"full","style":{"spacing":{"padding":{"top":"32px","bottom":"32px","left":"20px","right":"20px"}}},"backgroundColor":"primary","textColor":"background","layout":{"type":"constrained"}} -->
 <div class="wp-block-group alignfull has-background-color has-primary-background-color has-text-color" style="padding-top:32px;padding-right:20px;padding-bottom:32px;padding-left:20px"><!-- wp:columns {"verticalAlignment":"center","align":"wide"} -->
 <div class="wp-block-columns alignwide are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center"} -->
@@ -19,3 +28,6 @@
 <!-- /wp:column --></div>
 <!-- /wp:columns --></div>
 <!-- /wp:group -->
+<?php
+// phpcs:enable Generic.Files.LineLength
+?>

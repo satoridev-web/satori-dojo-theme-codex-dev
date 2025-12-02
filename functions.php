@@ -16,7 +16,12 @@ require_once get_template_directory() . '/inc/patterns.php';
 require_once get_template_directory() . '/inc/template-tags.php';
 
 // Ensure theme text domain is loaded.
-add_action( 'after_setup_theme', 'satori_dojo_load_textdomain' );
+/**
+ * Load theme text domain.
+ *
+ * @return void
+ */
 function satori_dojo_load_textdomain() {
     load_theme_textdomain( 'satori-dojo', get_template_directory() . '/languages' );
 }
+add_action( 'after_setup_theme', 'satori_dojo_load_textdomain' );

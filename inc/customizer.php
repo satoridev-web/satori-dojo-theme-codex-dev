@@ -10,6 +10,7 @@ if ( ! function_exists( 'satori_dojo_customize_register' ) ) {
      * Register Customizer settings and controls.
      *
      * @param WP_Customize_Manager $wp_customize Customizer object.
+     * @return void
      */
     function satori_dojo_customize_register( $wp_customize ) {
         $wp_customize->add_panel(
@@ -286,7 +287,11 @@ if ( ! function_exists( 'satori_dojo_customize_register' ) ) {
             $wp_customize->add_control(
                 "satori_dojo_{$network}_url",
                 array(
-                    'label'   => sprintf( __( '%s URL', 'satori-dojo' ), ucfirst( $network ) ),
+                    'label'   => sprintf(
+                        /* translators: %s: Social network name. */
+                        esc_html__( '%s URL', 'satori-dojo' ),
+                        esc_html( ucfirst( $network ) )
+                    ),
                     'section' => 'satori_dojo_social_media',
                     'type'    => 'url',
                 )
@@ -304,7 +309,11 @@ if ( ! function_exists( 'satori_dojo_customize_register' ) ) {
             $wp_customize->add_control(
                 "satori_dojo_show_social_{$location}",
                 array(
-                    'label'   => sprintf( __( 'Show icons in %s', 'satori-dojo' ), $location ),
+                    'label'   => sprintf(
+                        /* translators: %s: Location label (header or footer). */
+                        esc_html__( 'Show icons in %s', 'satori-dojo' ),
+                        esc_html( $location )
+                    ),
                     'section' => 'satori_dojo_social_media',
                     'type'    => 'checkbox',
                 )
@@ -359,6 +368,8 @@ add_action( 'customize_register', 'satori_dojo_customize_register' );
 if ( ! function_exists( 'satori_dojo_customizer_css' ) ) {
     /**
      * Output inline CSS variables based on Customizer settings.
+     *
+     * @return void
      */
     function satori_dojo_customizer_css() {
         $heading_font = satori_dojo_get_font_stack( get_theme_mod( 'satori_dojo_heading_font', 'sans-serif' ) );
@@ -367,24 +378,39 @@ if ( ! function_exists( 'satori_dojo_customizer_css' ) ) {
         $container    = absint( get_theme_mod( 'satori_dojo_container_width', 1100 ) );
 
         $css_vars = array(
-            '--satori-dojo-color-primary'          => sanitize_hex_color( get_theme_mod( 'satori_dojo_primary_color', '#0f766e' ) ),
-            '--satori-dojo-color-secondary'        => sanitize_hex_color( get_theme_mod( 'satori_dojo_secondary_color', '#0ea5e9' ) ),
-            '--satori-dojo-color-background'       => sanitize_hex_color( get_theme_mod( 'satori_dojo_background_color', '#ffffff' ) ),
+            '--satori-dojo-color-primary'          => sanitize_hex_color(
+                get_theme_mod( 'satori_dojo_primary_color', '#0f766e' )
+            ),
+            '--satori-dojo-color-secondary'        => sanitize_hex_color(
+                get_theme_mod( 'satori_dojo_secondary_color', '#0ea5e9' )
+            ),
+            '--satori-dojo-color-background'       => sanitize_hex_color(
+                get_theme_mod( 'satori_dojo_background_color', '#ffffff' )
+            ),
             '--satori-dojo-font-heading'           => $heading_font,
             '--satori-dojo-font-body'              => $body_font,
             '--satori-dojo-base-font-size'         => $base_size . 'px',
             '--satori-dojo-container-width'        => $container . 'px',
-            '--satori-dojo-color-primary-strong'   => satori_dojo_adjust_brightness( get_theme_mod( 'satori_dojo_primary_color', '#0f766e' ), -10 ),
+            '--satori-dojo-color-primary-strong'   => satori_dojo_adjust_brightness(
+                get_theme_mod( 'satori_dojo_primary_color', '#0f766e' ),
+                -10
+            ),
             '--satori-dojo-color-surface'          => '#f7fafc',
             '--satori-dojo-color-text'             => '#1f2933',
             '--satori-dojo-color-text-muted'       => '#475569',
         );
 
-        echo '<style id="satori-dojo-customizer-vars">:root{' . satori_dojo_array_to_css_vars( $css_vars ) . '}</style>';
+        printf(
+            '<style id="satori-dojo-customizer-vars">:root{%s}</style>',
+            satori_dojo_array_to_css_vars( $css_vars )
+        );
 
         $custom_css = get_theme_mod( 'satori_dojo_custom_css' );
         if ( ! empty( $custom_css ) ) {
-            printf( '<style id="satori-dojo-custom-css">%s</style>', wp_strip_all_tags( $custom_css ) );
+            printf(
+                '<style id="satori-dojo-custom-css">%s</style>',
+                wp_strip_all_tags( $custom_css )
+            );
         }
     }
 }
@@ -393,6 +419,8 @@ add_action( 'wp_head', 'satori_dojo_customizer_css' );
 if ( ! function_exists( 'satori_dojo_customizer_js' ) ) {
     /**
      * Output optional custom JS in footer.
+     *
+     * @return void
      */
     function satori_dojo_customizer_js() {
         $custom_js = get_theme_mod( 'satori_dojo_custom_js' );
@@ -400,7 +428,10 @@ if ( ! function_exists( 'satori_dojo_customizer_js' ) ) {
             return;
         }
 
-        echo '<script id="satori-dojo-custom-js">' . wp_strip_all_tags( $custom_js ) . '</script>';
+        printf(
+            '<script id="satori-dojo-custom-js">%s</script>',
+            wp_strip_all_tags( $custom_js )
+        );
     }
 }
 add_action( 'wp_footer', 'satori_dojo_customizer_js', 20 );
